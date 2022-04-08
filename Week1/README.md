@@ -115,9 +115,33 @@ Create a program that displays your name
               la $a0, myName
               syscall
 ```
-
-
-
+# Thursday
+* #### Print special numbers
+```javascript
+let iterator = 0
+console.log('Even numbers 0 to 100')
+while(true){
+	if (iterator % 2 === 0) console.log(iterator)
+  	if (iterator === 100) break
+	iterator++
+}
+```
+* #### Bad code
+The code had an error ```(cond = true) ```. The error was the usage of `=` as operator, in JS we must use `==` or `===` to check if two values are equal
+```javascript
+var cond = false;
+cond === true ? console.log('The cond variable is true') : console.log('The cond variable is false')
+```
+* #### Bad code 2
+```javascript
+var n = 100;
+n === 100 ?
+  console.log('This is a special number!')
+: (n < 1000 && n % 10 === 0) ?
+  console.log('This number is almost special')
+:
+  console.log('Just a regular number')
+```
 
 
 
