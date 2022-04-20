@@ -1,6 +1,10 @@
 # Tuesday
 * #### Multiply
-
+```javascript
+function multiply(a, b){
+  return a * b;
+}
+```
 * #### ASCII Total
 ```javascript
 function uniTotal (string) {
