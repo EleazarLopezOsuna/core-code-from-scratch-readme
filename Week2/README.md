@@ -35,3 +35,38 @@ function finalGrade (exam, projects) {
   (exam > 50 && projects >= 2) ? 75 : 0
 }
 ```
+# Wednesday
+* #### Holiday VIII - Duty Free
+```javascript
+function dutyFree(normPrice, discount, hol){
+  return Math.floor(hol/(normPrice * (discount/100)))
+}
+```
+* #### Twice As Old
+```javascript
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  let i = 0
+  while(true){
+    if((dadYearsOld + i) === 2 * (sonYearsOld + i))
+      return i
+    if((dadYearsOld - i) === 2 * (sonYearsOld - i))
+      return i
+    i++
+  }
+}
+```
+* #### Valid Spacing
+```javascript
+function validSpacing(s) {
+  const re = new RegExp('\\s\\s+')
+  if(s.startsWith(' ') || s.endsWith(' ') || s.match(re))
+    return false
+  return true
+}
+```
+* #### Fake Binary
+```javascript
+function fakeBin(x){
+  return x.replace(/[0-4]/ig, '0').replace(/[5-9]/ig, '1')
+}
+```
