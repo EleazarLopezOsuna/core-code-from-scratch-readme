@@ -75,16 +75,14 @@ function duplicateCount(text){
   var repeatCount = 0;
   charArray.forEach(char => {
     if(charDictionary.hasOwnProperty(char)){
-      charDictionary[char] = charDictionary[char] + 1
+      if(charDictionary[char] === 1){
+        repeatCount++
+      }
+      charDictionary[char]++
       return
     }
     charDictionary[char] = 1
   })
-  for (const [key, value] of Object.entries(charDictionary)) {
-    if(value > 1){
-      repeatCount++
-    }
-  }
   return repeatCount
 }
 ```
