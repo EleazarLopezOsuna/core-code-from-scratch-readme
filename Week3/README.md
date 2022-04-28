@@ -102,17 +102,68 @@ decodeMorse = function(morseCode){
 # Wednesday
 * #### Valid Parentheses
 ```javascript
+function validParentheses(parens) {
+  var control = []
+  for(var i = 0; i < parens.length; i++){
+    if(parens.charAt(i) === '(')
+      control.push('(')
+    else{
+      if(control.length === 0)
+        return false
+      control.pop()
+    }
+  }
+  if(control.length === 0)
+    return true;
+  return false;
+}
 ```
 * #### Convert String To Camel Case
 ```javascript
+function toCamelCase(str){
+  const reg = /[-_]/;
+  return str.split(reg).map((element, index) => {
+    if (index === 0) return element
+    return element.charAt(0).toUpperCase() + element.slice(1);
+  }).join('')
+}
 ```
 * #### Unique In Order
 ```javascript
+var uniqueInOrder = function(iterable){
+  if(typeof(iterable) === 'string')
+    iterable = iterable.split('')
+  return iterable.filter((element, index) => {
+    if(index === 0)
+      return element
+    if(iterable[index - 1] !== element)
+      return element
+  })
+}
 ```
 # Thursday
 * #### Fold An Array
 ```javascript
+function foldArray(array, runs)
+{
+  if (runs === 0 )
+    return array
+  var newArray = []
+  var c = array.slice()
+  while(c.length){
+    newArray.push(c.shift() +( c.pop() || 0))
+  }
+  return foldArray(newArray, runs - 1);
+}
 ```
 * #### Encrypt This!
 ```javascript
+var encryptThis = function(text) {
+  return text.split(' ').map(element => {
+    let second = element.length > 1 ? element[1] : ''
+    let body = element.length > 2 ? element.slice(2, element.length - 1) : ''
+    let last = element.length > 2 ? element[element.length - 1] : ''
+    return element.charCodeAt(0) + last + body + second;
+  }).join(' ')
+}
 ```
